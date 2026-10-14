@@ -1,0 +1,82 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>AutoNexus | Vehicle Service Center</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <div id="loginView" class="login-shell">
+    <section class="login-story">
+      <div class="brand brand-large"><span class="brand-mark">VSC</span><span><b>VSC</b><small>Vehicle Service Center</small></span></div>
+      <div class="story-copy">
+        <span class="eyebrow">SMARTER VEHICLE CARE</span>
+        <h1>Keep your vehicle<br>in its best condition.</h1>
+        <p>Book a service, follow every repair, and stay informed from appointment to delivery.</p>
+      </div>
+      <div class="garage-art" aria-label="Illustration of a car in a service garage">
+        <div class="garage-window"></div><div class="tool-board">🔧　⚙　🔩</div>
+        <div class="car"><div class="car-window"></div><div class="car-wheel wheel-a"></div><div class="car-wheel wheel-b"></div><div class="car-light"></div></div>
+        <div class="mechanic"><div class="head"></div><div class="body"></div><div class="arm"></div></div>
+        <div class="floor-line"></div>
+      </div>
+      <div class="benefits">
+        <div><span>⌁</span><b>Expert service</b><small>Professional vehicle care</small></div>
+        <div><span>◇</span><b>Trusted & reliable</b><small>Clear service updates</small></div>
+        <div><span>◷</span><b>On-time service</b><small>Know your delivery date</small></div>
+      </div>
+    </section>
+    <section class="login-panel">
+      <div class="auth-card">
+        <div class="brand brand-center"><span class="brand-mark">VSC</span><span><b>VSC</b><small>Service Center Management</small></span></div>
+        <h2 id="authTitle">Welcome back!</h2><p id="authSubtitle" class="muted center">Sign in to continue to your workspace.</p>
+        <div class="auth-tabs"><button class="tab active" id="loginTab">Login</button><button class="tab" id="signupTab">Sign up</button></div>
+        <form id="authForm">
+          <div class="field hidden" id="nameField"><label for="fullName">Full name</label><input id="fullName" autocomplete="name" placeholder="Enter your full name"></div>
+          <div class="field"><label for="email">Email address</label><div class="input-icon"><span>✉</span><input id="email" type="email" required placeholder="Enter your email address" autocomplete="username"></div></div>
+          <div class="field"><label for="password">Password</label><div class="input-icon"><span>♙</span><input id="password" type="password" required placeholder="Enter your password" autocomplete="current-password"><button type="button" class="show-password" id="togglePassword" aria-label="Show password">◉</button></div></div>
+          <div class="field hidden" id="roleField"><label for="role">Create account as</label><select id="role"><option value="customer">Customer</option><option value="technician">Technician</option></select><small class="hint">Admin accounts are demo-only and cannot be created from signup.</small></div>
+          <div id="authMessage" class="message hidden"></div>
+          <button class="btn primary full" id="authSubmit" type="submit">Login <span>→</span></button>
+        </form>
+        <div class="or-divider"><span>DEMO ACCESS</span></div>
+        <div class="demo-accounts">
+          <button type="button" class="demo-account" data-demo="user"><span class="demo-avatar">U</span><span><b>Customer</b><small>user@gmail.com</small></span><span class="demo-arrow">↗</span></button>
+          <button type="button" class="demo-account" data-demo="admin"><span class="demo-avatar purple">A</span><span><b>Admin</b><small>admin@gmail.com</small></span><span class="demo-arrow">↗</span></button>
+          <button type="button" class="demo-account" data-demo="tech"><span class="demo-avatar blue">T</span><span><b>Technician</b><small>technision@gmail.com</small></span><span class="demo-arrow">↗</span></button>
+          <p class="demo-password">Demo password for all accounts: <b>12345</b></p>
+        </div>
+        <p class="auth-foot">Frontend academic demo · Do not use real passwords</p>
+      </div>
+    </section>
+  </div>
+
+  <div id="appView" class="app-shell hidden">
+    <aside class="sidebar" id="sidebar">
+      <div class="side-brand"><span class="brand-mark">VSC</span><span><b>VSC</b><small>Service Center</small></span></div>
+      <div class="side-caption" id="roleCaption">WORKSPACE</div>
+      <nav id="sideNav" class="side-nav"></nav>
+      <button id="logoutBtn" class="logout-btn"><span>↪</span> Logout</button>
+      <div class="side-footer">Vehicle Service Center<br><small>Management System · Demo</small></div>
+    </aside>
+    <main class="main-area">
+      <header class="topbar">
+        <button class="mobile-menu" id="mobileMenu" aria-label="Open menu">☰</button>
+        <div class="search-box"><span>⌕</span><input id="globalSearch" placeholder="Search appointments, vehicles, job cards..."></div>
+        <div class="top-actions"><button class="icon-button" id="notificationBtn" title="Notifications">♧<i></i></button><div class="profile-pill"><span class="profile-avatar" id="profileAvatar">A</span><span><b id="profileName">Admin</b><small id="profileRole">Administrator</small></span><span class="chevron">⌄</span></div></div>
+      </header>
+      <div class="page-wrap">
+        <div class="page-heading"><div><div class="eyebrow" id="pageEyebrow">OVERVIEW</div><h1 id="pageTitle">Dashboard</h1><p id="pageSubtitle">Here’s what’s happening at your service center today.</p></div><div class="heading-actions" id="headingActions"></div></div>
+        <section id="pageContent"></section>
+        <footer class="app-footer">VSC · Vehicle Service Center Management System <span>Frontend demo · Data stays in this browser</span></footer>
+      </div>
+    </main>
+  </div>
+  <div id="modalRoot"></div>
+  <div id="toastRoot" class="toast-root"></div>
+  <script src="js/app.js"></script>
+</body>
+</html>
